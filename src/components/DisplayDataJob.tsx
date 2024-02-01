@@ -32,7 +32,7 @@ export default function DisplayDataJob() {
                     </div>
                     <p>{`Firma: ${job.companyName}`}</p>
                     <p>{`Position: ${job.position}`}</p>
-                    <p>{`Zeitraum: ${job.startDate}`}</p>
+                    <p>{`Zeitraum: ${job.startDate} bis ${job.endDate}`}</p>
                 </div>
             ))}
              <JobForm handleAddJob={handleAddJob} />
