@@ -11,8 +11,7 @@ export default function DisplayDataJob() {
         setEditMode(true);
     }
 
-    const handleAddJob = (data: JobData, e: any) => {
-        e.preventDefault();
+    const handleAddJob = (data: JobData) => {
         setJobList([...jobList, data]);
         setEditMode(false);
     };

@@ -3,7 +3,7 @@ import { JobData } from "./Types";
 
 type JProps = {
 
-    handleAddJob: (data: JobData, e: any) => any
+    handleAddJob: (data: JobData) => any
 }
 
 export default function JobForm({ handleAddJob }: JProps) {
@@ -23,7 +23,7 @@ export default function JobForm({ handleAddJob }: JProps) {
                 <label>Position: <input type="text" className="form-control item" onChange={(e) => setNewJob({ ...newJob, position: e.target.value })} /></label>
                 <label>Start Datum: <input type="text" className="form-control item" onChange={(e) => setNewJob({ ...newJob, startDate: e.target.value })} /></label>
             </form>
-            <button type="button" className="save btn btn-primary btn-block rounded-pill shadow-sm" onClick={(e) => handleAddJob(newJob, e)}>Save</button>
+            <button type="button" className="save btn btn-primary btn-block rounded-pill shadow-sm" onClick={() => handleAddJob(newJob)}>Save</button>
         </div>
     )
 }

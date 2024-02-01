@@ -3,7 +3,7 @@ import { Education } from "./Types";
 
 type SProps = {
 
-    handleAddEducation: (data: Education, e: any) => any
+    handleAddEducation: (data: Education) => any
 }
 
 export default function SchoolForm({handleAddEducation}: SProps) {
@@ -23,7 +23,7 @@ export default function SchoolForm({handleAddEducation}: SProps) {
             <label>Abschlussjahr: <input type="text" className="form-control item" value={newEducation.graduationYear} onChange={(e) => setNewEducation({ ...newEducation, graduationYear: e.target.value })} /></label>
             
         </form>
-        <button type="button" className="save btn btn-primary btn-block rounded-pill shadow-sm" onClick={(e) => handleAddEducation(newEducation, e)}>Save</button>
+        <button type="button" className="save btn btn-primary btn-block rounded-pill shadow-sm" onClick={() => handleAddEducation(newEducation)}>Save</button>
     </div>
     )
 }

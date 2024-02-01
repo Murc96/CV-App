@@ -11,8 +11,7 @@ export default function DisplayDataSchool() {
         setEditMode(true);
     }
 
-    const handleAddEducation = (data: Education, e: any) => {
-        e.preventDefault();
+    const handleAddEducation = (data: Education) => {
         setEducationList([...educationList, data]);
         setEditMode(false);
     };
