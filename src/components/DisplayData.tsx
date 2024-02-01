@@ -2,7 +2,7 @@ import { useState } from "react";
 import Form from "./Form";
 import { FormPersonalData } from "./Types";
 
-export default function InputForm() {
+export default function DisplayData () {
     const [personalData, setPersonalData] = useState({
         name: "",
         birthdate: "",
@@ -18,8 +18,6 @@ export default function InputForm() {
     }
 
     const handleSubmit = (data: FormPersonalData, e: any) => {
-        e.preventDefault();
-
         setEditMode(false);
         setPersonalData({ ...data })
     }
@@ -40,7 +38,7 @@ export default function InputForm() {
                             <p>E-Mail: {personalData.email}</p>
                             <p>Number: {personalData.number}</p>
                         </div>
-                        <button onClick={handleEditClick}>Edit</button>
+                        <button onClick={handleEditClick} className="btn btn-primary btn-block rounded-pill shadow-sm">Edit</button>
                     </>
                 )
                 }

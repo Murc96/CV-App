@@ -10,12 +10,12 @@ type TProps = {
         number: string,
     },
 
-    handleSubmit: (data: FormPersonalData, e: any) => void;
+    handleSubmit: (data: FormPersonalData, e: any) => any;
 }
 
-export default function Form({personalData, handleSubmit}: TProps) {
+export default function Form({ personalData, handleSubmit }: TProps) {
 
-    const[data, setData] = useState(personalData);
+    const [data, setData] = useState(personalData);
 
     const handleChange = (field: string, value: string) => {
         switch (field) {
@@ -37,13 +37,15 @@ export default function Form({personalData, handleSubmit}: TProps) {
     }
 
     return (
-        <form onSubmit={(e) => handleSubmit(data, e)}>
-            <label>Name: <input type="text" value={data.name} onChange={(e) => handleChange("name", e.target.value)}></input></label>
-            <label>Birthdate: <input type="date" value={data.birthdate} onChange={(e) => handleChange("birthdate", e.target.value)}></input></label>
-            <label>Adress: <input type="text" value={data.adress} onChange={(e) => handleChange("adress", e.target.value)}></input></label>
-            <label>E-Mail: <input type="text" value={data.email} onChange={(e) => handleChange("email", e.target.value)}></input></label>
-            <label>Number: <input type="text" value={data.number} onChange={(e) => handleChange("number", e.target.value)}></input></label>
-            <button type= "submit">Submit</button>
+    <div className= "form-body">
+        <form className ="form-holder" onSubmit={(e) => handleSubmit(data, e)}>
+            <label>Name: <input type="text" className="form-control item" value={data.name} onChange={(e) => handleChange("name", e.target.value)}></input></label>
+            <label>Birthdate: <input type="date" className="form-control item" value={data.birthdate} onChange={(e) => handleChange("birthdate", e.target.value)}></input></label>
+            <label>Adress: <input type="text" className="form-control item" value={data.adress} onChange={(e) => handleChange("adress", e.target.value)}></input></label>
+            <label>E-Mail: <input type="text" className="form-control item" value={data.email} onChange={(e) => handleChange("email", e.target.value)}></input></label>
+            <label>Number: <input type="text" className="form-control item" value={data.number} onChange={(e) => handleChange("number", e.target.value)}></input></label>
+            <button type="submit" className="save btn btn-primary btn-block rounded-pill shadow-sm">Save</button>
         </form>
+    </div>
     )
 }
