@@ -24,20 +24,20 @@ export default function DisplayData () {
     }
 
     return (
-        <div>
+        <div className="form-body">
             <h1>Lebenslauf</h1>
 
-            <section>
+            <section className="form-holder">
                 <h2>Persönliche Daten</h2>
                 {editMode ? (<Form personalData={personalData} handleSubmit={handleSubmit} />
                 ) : (
                     <>
                         <div>
                             <p>Name: {personalData.name}</p>
-                            <p>Birthdate: {personalData.birthdate}</p>
-                            <p>Adress: {personalData.adress}</p>
+                            <p>Geburtsdatum: {personalData.birthdate}</p>
+                            <p>Adresse: {personalData.adress}</p>
                             <p>E-Mail: {personalData.email}</p>
-                            <p>Number: {personalData.number}</p>
+                            <p>Nummer: {personalData.number}</p>
                         </div>
                         <button onClick={handleEditClick} className="btn btn-primary btn-block rounded-pill shadow-sm">Edit</button>
                     </>
