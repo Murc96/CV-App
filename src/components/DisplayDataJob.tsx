@@ -48,7 +48,7 @@ export default function DisplayDataJob() {
                     </div>
                     <p>{`Firma: ${job.companyName}`}</p>
                     <p>{`Position: ${job.position}`}</p>
-                    <p>{`Zeitraum: ${job.startDate}`}</p>
+                    <p>{`Zeitraum: ${job.startDate} bis ${job.endDate}`}</p>
                 </div>
             ))}
                 <button type="button" className="btn btn-primary btn-block rounded-pill shadow-sm" onClick={handleAddClick}>Add</button>
