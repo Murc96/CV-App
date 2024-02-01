@@ -18,6 +18,7 @@ export default function DisplayData () {
     }
 
     const handleSubmit = (data: FormPersonalData, e: any) => {
+        e.preventDefault();
         setEditMode(false);
         setPersonalData({ ...data })
     }
